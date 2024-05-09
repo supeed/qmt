@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.67">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    
+	<title>绘图函数</title><meta name="description" content="QMT说明, QMT-Python-API, QMT用户手册。">
+    
+<link rel="preload" href="../assets/style-8436f03b.css" as="style">
+<link rel="stylesheet" href="../assets/style-8436f03b.css">
+    
+<link rel="modulepreload" href="../assets/app-4f7ad5aa.js">
+<link rel="modulepreload" href="../assets/drawing_function.html-6fd79a20.js">
+<link rel="modulepreload" href="../assets/drawing_function.html-dee669df.js">
+<link rel="prefetch" href="../assets/index.html-93a0007d.js" as="script">
+<link rel="prefetch" href="../assets/basic_syntax.html-e393df56.js" as="script">
+<link rel="prefetch" href="../assets/check_sheet.html-a405c8a3.js" as="script">
+<link rel="prefetch" href="../assets/code_examples.html-985b4984.js" as="script">
+<link rel="prefetch" href="../assets/control_statement.html-bf992bd7.js" as="script">
+<link rel="prefetch" href="../assets/operating_mode.html-a2f39c1a.js" as="script">
+<link rel="prefetch" href="../assets/start_now.html-1be21f8a.js" as="script">
+<link rel="prefetch" href="../assets/system_function.html-49a65798.js" as="script">
+<link rel="prefetch" href="../assets/python调用VBA.html-e92f2331.js" as="script">
+<link rel="prefetch" href="../assets/全市场涨跌幅度统计.html-b8ba35f1.js" as="script">
+<link rel="prefetch" href="../assets/全市场资金流向.html-3bd359eb.js" as="script">
+<link rel="prefetch" href="../assets/北向资金.html-c14449da.js" as="script">
+<link rel="prefetch" href="../assets/南向资金.html-ed8f1d67.js" as="script">
+<link rel="prefetch" href="../assets/外盘_内盘.html-f9f023d3.js" as="script">
+<link rel="prefetch" href="../assets/多空对比.html-a634bb69.js" as="script">
+<link rel="prefetch" href="../assets/委买价_委卖价_委买量_委卖量.html-e791f06d.js" as="script">
+<link rel="prefetch" href="../assets/总市值.html-54cae4e7.js" as="script">
+<link rel="prefetch" href="../assets/总股本_涨停_跌停.html-9495eb6a.js" as="script">
+<link rel="prefetch" href="../assets/换手.html-396e0a2d.js" as="script">
+<link rel="prefetch" href="../assets/最新_今开_最高_最低_总额_总手_交易状态.html-1ae0fd22.js" as="script">
+<link rel="prefetch" href="../assets/注册资本.html-061f0b8d.js" as="script">
+<link rel="prefetch" href="../assets/流通盘.html-26dbb5b3.js" as="script">
+<link rel="prefetch" href="../assets/涨跌_涨幅.html-c4201ae4.js" as="script">
+<link rel="prefetch" href="../assets/涨跌家数变化.html-a30316a7.js" as="script">
+<link rel="prefetch" href="../assets/规模风向标.html-d7dc3f5e.js" as="script">
+<link rel="prefetch" href="../assets/量比.html-ca6f9a2e.js" as="script">
+<link rel="prefetch" href="../assets/index.html-179668eb.js" as="script">
+<link rel="prefetch" href="../assets/bond.html-d9c1be0d.js" as="script">
+<link rel="prefetch" href="../assets/floorfunds.html-8810bed2.js" as="script">
+<link rel="prefetch" href="../assets/future.html-8c1c26b7.js" as="script">
+<link rel="prefetch" href="../assets/indexes.html-ec6ecef0.js" as="script">
+<link rel="prefetch" href="../assets/industry.html-cffc4e77.js" as="script">
+<link rel="prefetch" href="../assets/option.html-1d25e189.js" as="script">
+<link rel="prefetch" href="../assets/question_answer.html-bed5ae76.js" as="script">
+<link rel="prefetch" href="../assets/stock.html-035c3630.js" as="script">
+<link rel="prefetch" href="../assets/rookie.html-df76d0ad.js" as="script">
+<link rel="prefetch" href="../assets/callback_function.html-4153be6c.js" as="script">
+<link rel="prefetch" href="../assets/code_examples.html-c1ae1001.js" as="script">
+<link rel="prefetch" href="../assets/data_function.html-a6b5f1c5.js" as="script">
+<link rel="prefetch" href="../assets/data_structure.html-a96a202d.js" as="script">
+<link rel="prefetch" href="../assets/enum_constants.html-2c1f6dcc.js" as="script">
+<link rel="prefetch" href="../assets/interface_operation.html-47a2cf15.js" as="script">
+<link rel="prefetch" href="../assets/question_answer.html-4f12deae.js" as="script">
+<link rel="prefetch" href="../assets/quote_function.html-827e9fb8.js" as="script">
+<link rel="prefetch" href="../assets/related_instructions.html-9b630c20.js" as="script">
+<link rel="prefetch" href="../assets/start_now.html-79f8f415.js" as="script">
+<link rel="prefetch" href="../assets/system_function.html-03a1dc3a.js" as="script">
+<link rel="prefetch" href="../assets/trading_function.html-3c0f4ee8.js" as="script">
+<link rel="prefetch" href="../assets/user_attention.html-e0d27a96.js" as="script">
+<link rel="prefetch" href="../assets/variable_convention.html-17caf0d6.js" as="script">
+<link rel="prefetch" href="../assets/code_examples.html-f1708e88.js" as="script">
+<link rel="prefetch" href="../assets/download_xtquant.html-337a4246.js" as="script">
+<link rel="prefetch" href="../assets/question_function.html-92b003d3.js" as="script">
+<link rel="prefetch" href="../assets/start_now.html-b45a357d.js" as="script">
+<link rel="prefetch" href="../assets/xtdata.html-97c855c0.js" as="script">
+<link rel="prefetch" href="../assets/xttrader.html-cb4abe04.js" as="script">
+<link rel="prefetch" href="../assets/JoinQuant2QMT.html-38cb9974.js" as="script">
+<link rel="prefetch" href="../assets/index.html-22b6b31a.js" as="script">
+<link rel="prefetch" href="../assets/daoru_daochu.html-c8cace75.js" as="script">
+<link rel="prefetch" href="../assets/hangqing_setting.html-1a9570b3.js" as="script">
+<link rel="prefetch" href="../assets/ty_add_indicator.html-1f2f4b0a.js" as="script">
+<link rel="prefetch" href="../assets/ty_backtest_strategy.html-270aeeab.js" as="script">
+<link rel="prefetch" href="../assets/ty_code_review_backtest.html-200ceddd.js" as="script">
+<link rel="prefetch" href="../assets/ty_content.html-bac1ad25.js" as="script">
+<link rel="prefetch" href="../assets/ty_data_download.html-351b4a4f.js" as="script">
+<link rel="prefetch" href="../assets/ty_data_interface.html-2e32a98a.js" as="script">
+<link rel="prefetch" href="../assets/ty_direct_connect.html-f8b10f83.js" as="script">
+<link rel="prefetch" href="../assets/ty_factor_data.html-1746bcaa.js" as="script">
+<link rel="prefetch" href="../assets/ty_linux_xtquant_data.html-44bf60fb.js" as="script">
+<link rel="prefetch" href="../assets/ty_native_python.html-8028f714.js" as="script">
+<link rel="prefetch" href="../assets/ty_register_install.html-0d2c078f.js" as="script">
+<link rel="prefetch" href="../assets/404.html-f9875e7b.js" as="script">
+<link rel="prefetch" href="../assets/index.html-766f0669.js" as="script">
+<link rel="prefetch" href="../assets/basic_syntax.html-5d89ee34.js" as="script">
+<link rel="prefetch" href="../assets/check_sheet.html-f9ed5248.js" as="script">
+<link rel="prefetch" href="../assets/code_examples.html-b9cb08f4.js" as="script">
+<link rel="prefetch" href="../assets/control_statement.html-efd069de.js" as="script">
+<link rel="prefetch" href="../assets/operating_mode.html-8477b54e.js" as="script">
+<link rel="prefetch" href="../assets/start_now.html-ffa9b752.js" as="script">
+<link rel="prefetch" href="../assets/system_function.html-3b0e07c1.js" as="script">
+<link rel="prefetch" href="../assets/python调用VBA.html-04a53346.js" as="script">
+<link rel="prefetch" href="../assets/全市场涨跌幅度统计.html-52d1f349.js" as="script">
+<link rel="prefetch" href="../assets/全市场资金流向.html-faf4d3d8.js" as="script">
+<link rel="prefetch" href="../assets/北向资金.html-c65ffe41.js" as="script">
+<link rel="prefetch" href="../assets/南向资金.html-f0b9a7f7.js" as="script">
+<link rel="prefetch" href="../assets/外盘_内盘.html-99b15d0e.js" as="script">
+<link rel="prefetch" href="../assets/多空对比.html-1b5dda20.js" as="script">
+<link rel="prefetch" href="../assets/委买价_委卖价_委买量_委卖量.html-10ef3ff4.js" as="script">
+<link rel="prefetch" href="../assets/总市值.html-3f06554a.js" as="script">
+<link rel="prefetch" href="../assets/总股本_涨停_跌停.html-fa561e62.js" as="script">
+<link rel="prefetch" href="../assets/换手.html-50b0fe55.js" as="script">
+<link rel="prefetch" href="../assets/最新_今开_最高_最低_总额_总手_交易状态.html-ac059782.js" as="script">
+<link rel="prefetch" href="../assets/注册资本.html-ed642b18.js" as="script">
+<link rel="prefetch" href="../assets/流通盘.html-cb0af016.js" as="script">
+<link rel="prefetch" href="../assets/涨跌_涨幅.html-4bdf807b.js" as="script">
+<link rel="prefetch" href="../assets/涨跌家数变化.html-39d9d51b.js" as="script">
+<link rel="prefetch" href="../assets/规模风向标.html-61f057d8.js" as="script">
+<link rel="prefetch" href="../assets/量比.html-946984fa.js" as="script">
+<link rel="prefetch" href="../assets/index.html-343a9bc9.js" as="script">
+<link rel="prefetch" href="../assets/bond.html-b95fe2e7.js" as="script">
+<link rel="prefetch" href="../assets/floorfunds.html-8f40ab6c.js" as="script">
+<link rel="prefetch" href="../assets/future.html-bc8a6747.js" as="script">
+<link rel="prefetch" href="../assets/indexes.html-12cf3b96.js" as="script">
+<link rel="prefetch" href="../assets/industry.html-5afe454b.js" as="script">
+<link rel="prefetch" href="../assets/option.html-41035b2b.js" as="script">
+<link rel="prefetch" href="../assets/question_answer.html-2e60f1af.js" as="script">
+<link rel="prefetch" href="../assets/stock.html-3ddf1187.js" as="script">
+<link rel="prefetch" href="../assets/rookie.html-1880c6e7.js" as="script">
+<link rel="prefetch" href="../assets/callback_function.html-7b61dc3e.js" as="script">
+<link rel="prefetch" href="../assets/code_examples.html-e4d0c98f.js" as="script">
+<link rel="prefetch" href="../assets/data_function.html-c585078e.js" as="script">
+<link rel="prefetch" href="../assets/data_structure.html-00957d9f.js" as="script">
+<link rel="prefetch" href="../assets/enum_constants.html-e026c5f8.js" as="script">
+<link rel="prefetch" href="../assets/interface_operation.html-294f10dc.js" as="script">
+<link rel="prefetch" href="../assets/question_answer.html-b40d9b88.js" as="script">
+<link rel="prefetch" href="../assets/quote_function.html-65e64c4b.js" as="script">
+<link rel="prefetch" href="../assets/related_instructions.html-4bd31d1e.js" as="script">
+<link rel="prefetch" href="../assets/start_now.html-b5537d3a.js" as="script">
+<link rel="prefetch" href="../assets/system_function.html-4e6487d0.js" as="script">
+<link rel="prefetch" href="../assets/trading_function.html-8de10c2f.js" as="script">
+<link rel="prefetch" href="../assets/user_attention.html-a4aafcf1.js" as="script">
+<link rel="prefetch" href="../assets/variable_convention.html-ee437d4a.js" as="script">
+<link rel="prefetch" href="../assets/code_examples.html-5b70b4b7.js" as="script">
+<link rel="prefetch" href="../assets/download_xtquant.html-cd71994a.js" as="script">
+<link rel="prefetch" href="../assets/question_function.html-0e56fa2f.js" as="script">
+<link rel="prefetch" href="../assets/start_now.html-ccb2e41b.js" as="script">
+<link rel="prefetch" href="../assets/xtdata.html-6eed3ea1.js" as="script">
+<link rel="prefetch" href="../assets/xttrader.html-95a0f11e.js" as="script">
+<link rel="prefetch" href="../assets/JoinQuant2QMT.html-4689d313.js" as="script">
+<link rel="prefetch" href="../assets/index.html-3d5e006c.js" as="script">
+<link rel="prefetch" href="../assets/daoru_daochu.html-a8aa83da.js" as="script">
+<link rel="prefetch" href="../assets/hangqing_setting.html-5f096289.js" as="script">
+<link rel="prefetch" href="../assets/ty_add_indicator.html-d492a779.js" as="script">
+<link rel="prefetch" href="../assets/ty_backtest_strategy.html-a88bc371.js" as="script">
+<link rel="prefetch" href="../assets/ty_code_review_backtest.html-d46b1117.js" as="script">
+<link rel="prefetch" href="../assets/ty_content.html-5ebd8aae.js" as="script">
+<link rel="prefetch" href="../assets/ty_data_download.html-afb26211.js" as="script">
+<link rel="prefetch" href="../assets/ty_data_interface.html-c02f6dd1.js" as="script">
+<link rel="prefetch" href="../assets/ty_direct_connect.html-96b151d2.js" as="script">
+<link rel="prefetch" href="../assets/ty_factor_data.html-288cd2ef.js" as="script">
+<link rel="prefetch" href="../assets/ty_linux_xtquant_data.html-b4e8a806.js" as="script">
+<link rel="prefetch" href="../assets/ty_native_python.html-0a5cdc64.js" as="script">
+<link rel="prefetch" href="../assets/ty_register_install.html-72528567.js" as="script">
+<link rel="prefetch" href="../assets/404.html-d17800ac.js" as="script">
+<link rel="prefetch" href="../assets/SearchBox-7eee7251.js" as="script">
+<link rel="prefetch" href="../assets/auto-6adc87e8.js" as="script">
+<link rel="prefetch" href="../assets/index-2bf332f6.js" as="script">
+<link rel="prefetch" href="../assets/flowchart-c441f34d.js" as="script">
+<link rel="prefetch" href="../assets/SignPanel-522772a1.js" as="script">
+<link rel="prefetch" href="../assets/SignPanel-522772a1.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[-->
+
+	<aside class="sidebar">
+	
+	<ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">内置Python <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="../innerApi/start_now.html" class="sidebar-item" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/user_attention.html" class="sidebar-item" aria-label="使用须知"><!--[--><!--]--> 使用须知 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/interface_operation.html" class="sidebar-item" aria-label="界面操作"><!--[--><!--]--> 界面操作 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/variable_convention.html" class="sidebar-item" aria-label="变量约定"><!--[--><!--]--> 变量约定 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/data_structure.html" class="sidebar-item" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/system_function.html" class="sidebar-item" aria-label="系统函数"><!--[--><!--]--> 系统函数 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/data_function.html" class="sidebar-item" aria-label="行情函数"><!--[--><!--]--> 行情函数 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/trading_function.html" class="sidebar-item" aria-label="交易函数"><!--[--><!--]--> 交易函数 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/callback_function.html" class="sidebar-item" aria-label="成交回报实时主推函数"><!--[--><!--]--> 成交回报实时主推函数 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/quote_function.html" class="sidebar-item" aria-label="引用函数"><!--[--><!--]--> 引用函数 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="../innerApi/drawing_function.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="绘图函数"><!--[--><!--]--> 绘图函数 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="../innerApi/drawing_function.html#contextinfo-paint-在界面上画图" class="router-link-active router-link-exact-active sidebar-item" aria-label="ContextInfo.paint - 在界面上画图"><!--[--><!--]--> ContextInfo.paint - 在界面上画图 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="../innerApi/drawing_function.html#contextinfo-draw-text-在图形上显示文字" class="router-link-active router-link-exact-active sidebar-item" aria-label="ContextInfo.draw_text - 在图形上显示文字"><!--[--><!--]--> ContextInfo.draw_text - 在图形上显示文字 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="../innerApi/drawing_function.html#contextinfo-draw-number-在图形上显示数字" class="router-link-active router-link-exact-active sidebar-item" aria-label="ContextInfo.draw_number - 在图形上显示数字"><!--[--><!--]--> ContextInfo.draw_number - 在图形上显示数字 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="../innerApi/drawing_function.html#contextinfo-draw-vertline-在数字-1-和数字-2-之间绘垂直线" class="router-link-active router-link-exact-active sidebar-item" aria-label="ContextInfo.draw_vertline - 在数字 1 和数字 2 之间绘垂直线"><!--[--><!--]--> ContextInfo.draw_vertline - 在数字 1 和数字 2 之间绘垂直线 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="../innerApi/drawing_function.html#contextinfo-draw-icon-在图形上绘制小图标" class="router-link-active router-link-exact-active sidebar-item" aria-label="ContextInfo.draw_icon - 在图形上绘制小图标"><!--[--><!--]--> ContextInfo.draw_icon - 在图形上绘制小图标 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="../innerApi/enum_constants.html" class="sidebar-item" aria-label="枚举常量"><!--[--><!--]--> 枚举常量 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/code_examples.html" class="sidebar-item" aria-label="完整示例"><!--[--><!--]--> 完整示例 <!--[--><!--]--></a><!----></li><li><a href="../innerApi/question_answer.html" class="sidebar-item" aria-label="常见问题"><!--[--><!--]--> 常见问题 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page" data-v-3c904194><!--[--><!--]--><div class="theme-default-contents" data-v-3c904194><!----><!--[--><!--]--><div class="theme-default-content" data-v-3c904194><div data-v-3c904194><h2 id="contextinfo-paint-在界面上画图" tabindex="-1"><a class="header-anchor" href="#contextinfo-paint-在界面上画图" aria-hidden="true">#</a> ContextInfo.paint - 在界面上画图</h2><p>在界面上画图</p><p><strong>调用方法：</strong> ContextInfo.paint(name, value, index, line_style, color = &#39;white&#39;, limit = &#39;&#39;)</p><p><strong>参数：</strong></p><table><thead><tr><th>参数名</th><th>类型</th><th>说明</th><th>提示</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>string</code></td><td>需显示的指标名</td><td></td></tr><tr><td><code>value</code></td><td><code>number</code></td><td>需显示的数值</td><td></td></tr><tr><td><code>index</code></td><td><code>number</code></td><td>显示索引位置</td><td>填 -1 表示按主图索引显示</td></tr><tr><td><code>line_style</code></td><td><code>number</code></td><td>线型</td><td>0：曲线<br>42：柱状线</td></tr><tr><td><code>color</code></td><td><code>string</code></td><td>颜色（不填默认为白色）</td><td>blue：蓝色<br>brown：棕<br>cyan：蓝绿<br>green：绿<br>magenta：品红<br>red：红<br>white：白<br>yellow：黄</td></tr><tr><td><code>limit</code></td><td><code>string</code></td><td>画线控制</td><td>&#39;noaxis&#39;：不影响坐标画线<br>&#39;nodraw&#39;：不画线</td></tr></tbody></table><p>**返回：**无</p><p><strong>示例：</strong></p><div class="vp-tabs"><div class="vp-tabs-nav" role="tablist"><button type="button" class="vp-tab-nav active" role="tab" aria-controls="tab-122-0" aria-selected="true">python</button></div><!--[--><div class="vp-tab active" id="tab-122-0" role="tabpanel" aria-expanded="true"><div class="language-python line-numbers-mode" data-ext="py"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#FF79C6;">def</span><span style="color:#F8F8F2;"> </span><span style="color:#50FA7B;">init</span><span style="color:#F8F8F2;">(</span><span style="color:#FFB86C;font-style:italic;">ContextInfo</span><span style="color:#F8F8F2;">):</span></span>
+<span class="line"><span style="color:#F8F8F2;">    realtimetag </span><span style="color:#FF79C6;">=</span><span style="color:#F8F8F2;"> ContextInfo.get_bar_timetag(ContextInfo.barpos)</span></span>
+<span class="line"><span style="color:#F8F8F2;">    value </span><span style="color:#FF79C6;">=</span><span style="color:#F8F8F2;"> ContextInfo.get_close_price(</span><span style="color:#E9F284;">&#39;&#39;</span><span style="color:#F8F8F2;">, </span><span style="color:#E9F284;">&#39;&#39;</span><span style="color:#F8F8F2;">, realtimetag) </span></span>
+<span class="line"><span style="color:#F8F8F2;">    ContextInfo.paint(</span><span style="color:#E9F284;">&#39;</span><span style="color:#F1FA8C;">close</span><span style="color:#E9F284;">&#39;</span><span style="color:#F8F8F2;">, value, </span><span style="color:#FF79C6;">-</span><span style="color:#BD93F9;">1</span><span style="color:#F8F8F2;">, </span><span style="color:#BD93F9;">0</span><span style="color:#F8F8F2;">, </span><span style="color:#E9F284;">&#39;</span><span style="color:#F1FA8C;">white</span><span style="color:#E9F284;">&#39;</span><span style="color:#F8F8F2;">,</span><span style="color:#E9F284;">&#39;</span><span style="color:#F1FA8C;">noaxis</span><span style="color:#E9F284;">&#39;</span><span style="color:#F8F8F2;">)</span></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--]--></div><h2 id="contextinfo-draw-text-在图形上显示文字" tabindex="-1"><a class="header-anchor" href="#contextinfo-draw-text-在图形上显示文字" aria-hidden="true">#</a> ContextInfo.draw_text - 在图形上显示文字</h2><p>在图形上显示数字   <strong>调用方法：</strong> <code>ContextInfo.draw_text(condition, position, text)</code></p><p><strong>参数：</strong></p><table><thead><tr><th>参数名</th><th>类型</th><th>说明</th><th>提示</th></tr></thead><tbody><tr><td><code>condition</code></td><td><code>bool</code></td><td>条件</td><td></td></tr><tr><td><code>Position</code></td><td><code>number</code></td><td>文字显示的位置</td><td></td></tr><tr><td><code>text</code></td><td><code>string</code></td><td>文字</td><td></td></tr></tbody></table><p>**返回值：**无</p><p><strong>示例：</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#F8F8F2;">def init(ContextInfo):</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ContextInfo.draw_text(1, 10, &#39;文字&#39;)</span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="contextinfo-draw-number-在图形上显示数字" tabindex="-1"><a class="header-anchor" href="#contextinfo-draw-number-在图形上显示数字" aria-hidden="true">#</a> ContextInfo.draw_number - 在图形上显示数字</h2><p>在图形上显示数字</p><p><strong>调用方法：</strong> <code>ContextInfo.draw_number(cond, height, number, precision)</code></p><p><strong>参数：</strong></p><table><thead><tr><th>参数名</th><th>类型</th><th>说明</th><th>提示</th></tr></thead><tbody><tr><td><code>cond</code></td><td><code>bool</code></td><td>条件</td><td></td></tr><tr><td><code>height</code></td><td><code>number</code></td><td>显示文字的高度位置</td><td></td></tr><tr><td><code>text</code></td><td><code>string</code></td><td>显示的数字</td><td></td></tr><tr><td><code>precision</code></td><td><code>number</code></td><td>为小数显示位数</td><td>取值范围 0 - 7</td></tr></tbody></table><p>**返回值：**无</p><p><strong>示例：</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#F8F8F2;">def init(ContextInfo):</span></span>
+<span class="line"><span style="color:#F8F8F2;">    close = ContextInfo.get_market_data([&#39;close&#39;])   </span></span>
+<span class="line"><span style="color:#F8F8F2;">    ContextInfo.draw_number(1 &gt; 0, close, 66, 1)</span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="contextinfo-draw-vertline-在数字-1-和数字-2-之间绘垂直线" tabindex="-1"><a class="header-anchor" href="#contextinfo-draw-vertline-在数字-1-和数字-2-之间绘垂直线" aria-hidden="true">#</a> ContextInfo.draw_vertline - 在数字 1 和数字 2 之间绘垂直线</h2><p>在数字1和数字2之间绘垂直线</p><p><strong>调用方法：</strong> <code>ContextInfo.draw_vertline(cond, number1, number2, color = &#39;&#39;, limit = &#39;&#39;)</code></p><p><strong>参数：</strong></p><table><thead><tr><th>参数名</th><th>类型</th><th>说明</th><th>提示</th></tr></thead><tbody><tr><td><code>cond</code></td><td><code>bool</code></td><td>条件</td><td></td></tr><tr><td><code>number1</code></td><td><code>number</code></td><td>数字1</td><td></td></tr><tr><td><code>number2</code></td><td><code>number</code></td><td>数字2</td><td></td></tr><tr><td><code>color</code></td><td><code>string</code></td><td>颜色（不填默认为白色）</td><td>blue：蓝色<br>brown：棕<br>cyan：蓝绿<br>green：绿<br>magenta：品红<br>red：红<br>white：白<br>yellow：黄</td></tr><tr><td><code>limit</code></td><td><code>string</code></td><td>画线控制</td><td>&#39;noaxis&#39;：不影响坐标画线<br>&#39;nodraw&#39;：不画线</td></tr></tbody></table><p><strong>返回：</strong> 无</p><p><strong>示例：</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#F8F8F2;">def init(ContextInfo):</span></span>
+<span class="line"><span style="color:#F8F8F2;">    close = ContextInfo.get_market_data([&#39;close&#39;])</span></span>
+<span class="line"><span style="color:#F8F8F2;">    open = ContextInfo.get_market_data([&#39;open&#39;])</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ContextInfo.draw_vertline(1 &gt; 0, close, open, &#39;cyan&#39;)</span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="contextinfo-draw-icon-在图形上绘制小图标" tabindex="-1"><a class="header-anchor" href="#contextinfo-draw-icon-在图形上绘制小图标" aria-hidden="true">#</a> ContextInfo.draw_icon - 在图形上绘制小图标</h2><p>在图形上绘制小图标</p><p><strong>调用方法：</strong> <code>ContextInfo.draw_icon(cond, height, type)</code></p><p><strong>参数：</strong></p><table><thead><tr><th>参数名</th><th>类型</th><th>说明</th><th>提示</th></tr></thead><tbody><tr><td><code>cond</code></td><td><code>bool</code></td><td>条件</td><td></td></tr><tr><td><code>height</code></td><td><code>number</code></td><td>图标的位置</td><td></td></tr><tr><td><code>text</code></td><td><code>number</code></td><td>图标的类型</td><td>1：椭圆<br>0：矩形</td></tr></tbody></table><p>**返回值：**无</p><p><strong>示例：</strong></p><div class="language-text line-numbers-mode" data-ext="text"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#F8F8F2;">def init(ContextInfo):</span></span>
+<span class="line"><span style="color:#F8F8F2;">    close = ContextInfo.get_market_data([&#39;close&#39;])</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ContextInfo.draw_icon(1 &gt; 0, close, 0)</span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></div><!--[--><!--]--></div>
+
+<nav class="page-nav" data-v-3c904194><p class="inner"><span class="prev"><a href="../innerApi/quote_function.html" class="" aria-label="引用函数"><!--[--><!--]--> 引用函数 <!--[--><!--]--></a></span><span class="next"><a href="../innerApi/enum_constants.html" class="" aria-label="枚举常量"><!--[--><!--]--> 枚举常量 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    
+  <div class="toFixedCopy wxFixed" style="text-align: center"><a href="https://work.weixin.qq.com/ca/cawcde1dc261ca71f1" target="_blank" rel="noopener noreferrer">联系微信获取权限<br><img src="../assets/联系客户经理.png" alt="微信扫码联系客服" title="点击联系客服" style="width:150px;"></a></div></body>
+</html>
