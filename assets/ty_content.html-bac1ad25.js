@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-3b2f6a75","path":"/videos/touyan/ty_content.html","title":"视频教程目录","lang":"zh-CN","frontmatter":{"title":"视频教程目录","date":"2023-10-19T11:04:05.000Z"},"headers":[],"git":{"updatedTime":1702863743000,"contributors":[{"name":"Johnny.liu","email":"liulei@thinktrader.net","commits":1}]},"filePathRelative":"videos/touyan/ty_content.md"}');export{t as data};
