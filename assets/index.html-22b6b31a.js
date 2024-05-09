@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-f5fb3a84","path":"/videos/","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1700748873000,"contributors":[{"name":"Johnny.liu","email":"liulei@thinktrader.net","commits":1}]},"filePathRelative":"videos/README.md"}');export{e as data};
